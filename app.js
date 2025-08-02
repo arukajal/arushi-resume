@@ -84,14 +84,20 @@ if (!hasWebGL) {
   loadingScreen.style.display = 'none';
 }
 
-// Data loading
+// Data loading with better error handling
 async function loadData() {
   try {
+    console.log('Loading data.json...');
     const res = await fetch('data.json');
+    console.log('Data response status:', res.status);
+    
     if (!res.ok) {
       throw new Error(`Failed to load data.json: ${res.status} ${res.statusText}`);
     }
-    return await res.json();
+    
+    const data = await res.json();
+    console.log('Data loaded successfully:', data.name);
+    return data;
   } catch (error) {
     console.error('Error loading data:', error);
     throw error;

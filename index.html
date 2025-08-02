@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="three.module.js" as="script" type="module">
+  <link rel="preload" href="OrbitControls.js" as="script" type="module">
+  <link rel="preload" href="data.json" as="fetch" crossorigin>
 </head>
 <body>
   <header class="topbar">
@@ -77,6 +82,26 @@
       <li><strong>Satellite Orbit Visualizer:</strong> CesiumJS app to simulate satellite orbit, orientation and field of view with interactive controls.</li>
     </ul>
   </section>
+
+  <!-- Debug script to help identify deployment issues -->
+  <script>
+    // Log loading status for debugging
+    console.log('Resume website loading...');
+    
+    // Check if modules are supported
+    if (typeof import === 'undefined') {
+      console.error('ES6 modules not supported');
+      document.body.classList.add('no-webgl');
+    }
+    
+    // Monitor script loading
+    window.addEventListener('error', function(e) {
+      console.error('Script loading error:', e.error);
+      if (e.filename && e.filename.includes('.js')) {
+        console.error('Failed to load:', e.filename);
+      }
+    });
+  </script>
 
   <script type="module" src="app.js"></script>
 </body>
