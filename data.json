@@ -1,0 +1,143 @@
+{
+  "name": "Arushi Singh",
+  "role": "Software Engineer",
+  "location": "Pune, India",
+  "phone": "9403316920",
+  "email": "arukajal2399@gmail.com",
+  "links": {
+    "LinkedIn": "https://www.linkedin.com/in/arushi-s-1bba89179",
+    "GitHub": "https://github.com/arukajal"
+  },
+  "profile": "Meticulous web developer with 3+ years of front-end experience and a passion for responsive website design. Implemented a new responsive and user-friendly web application for the general scrapping of oils and wells websites, making it easy for data analysts to collect and analyze the data.",
+  "skills": [
+    "Web Design",
+    "UI/UX Design Thinking",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "React",
+    "Redux",
+    "Three.js",
+    "AWS (Lambda, Cognito, EC2, ECS, MQTT, DynamoDB)",
+    "Material UI",
+    "Bootstrap",
+    "Flask (RESTful APIs)",
+    "Autodesk Forge Viewer / Autodesk Platform Services",
+    "Problem-Solving",
+    "Project Management Tools",
+    "Strong Communication"
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Stealth Startup",
+      "dates": "2024 – Present",
+      "bullets": [
+        "Built a BIM visualization application using Forge Viewer with user-driven interaction and controls.",
+        "Implemented Redux for seamless, centralized state management across the app.",
+        "Integrated OBJ assets into Forge Viewer to improve load performance and capabilities."
+      ],
+      "achievements": ["Optimized application speed"]
+    },
+    {
+      "title": "Team Lead",
+      "company": "Centre for Computational Technologies Pvt. Ltd. (CCTech)",
+      "dates": "2023 – 2024",
+      "bullets": [
+        "Created a dashboard with 10+ applications; handled customer meetings and presented frontend updates.",
+        "Developed core logic and problem-solving solutions for new feature implementation.",
+        "Built reusable code and libraries to accelerate future development.",
+        "Worked on Flair 3D project, visualizing 3D sensors on the frontend."
+      ],
+      "achievements": ["Optimized application speed by 50%"]
+    },
+    {
+      "title": "Member of Technical Staff",
+      "company": "Centre for Computational Technologies Pvt. Ltd. (CCTech)",
+      "dates": "2021 – 2023",
+      "bullets": [
+        "Implemented web apps and landing pages end-to-end with ReactJS, Python, and AWS.",
+        "Standardized UI with a responsive, user-friendly approach; validated all user inputs before submission.",
+        "Collaborated with designers to translate visuals into functional pages; assessed UX and UI feasibility."
+      ],
+      "achievements": ["Reduced bugs by 40% by eliminating prop drilling"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "BIM Structure Viewer",
+      "summary": "A performant BIM viewer replacing legacy pipelines, with camera controls, sectioning, and material toggles.",
+      "dates": "2024–2025",
+      "stack": [
+        "React",
+        "Three.js (r167)",
+        "Zustand"
+      ],
+      "links": {
+        "Demo": "#",
+        "Code": "#"
+      }
+    },
+    {
+      "name": "Flair 3D — Sensor Visualization",
+      "summary": "Visualizes 3D sensors and live states in a responsive WebGL interface for engineering teams.",
+      "dates": "2023",
+      "stack": [
+        "React",
+        "Three.js",
+        "MUI"
+      ],
+      "links": {
+        "Case study": "#",
+        "Code": "#"
+      }
+    },
+    {
+      "name": "Satellite Orbit Visualizer",
+      "summary": "CesiumJS app to simulate satellite orbit, orientation and field of view with interactive controls.",
+      "dates": "2024",
+      "stack": [
+        "CesiumJS",
+        "React"
+      ],
+      "links": {
+        "Code": "#"
+      }
+    },
+    {
+      "name": "OBJ/GLTF Pipeline (Backend-driven)",
+      "summary": "Shifted column/beam generation to backend and streamed OBJ/GLTF to the client; cached parts in IndexedDB.",
+      "dates": "2024",
+      "stack": [
+        "GLTF/OBJ",
+        "IndexedDB",
+        "Web Workers"
+      ],
+      "links": {
+        "Notes": "#"
+      }
+    },
+    {
+      "name": "Dimensioned Geometry Tool",
+      "summary": "Three.js utility to add dimension lines with arrows/labels around meshes; interactive resizing and offsets.",
+      "dates": "2024",
+      "stack": [
+        "Three.js",
+        "TypeScript"
+      ],
+      "links": {
+        "Code": "#"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Engineering",
+      "institution": "PES's Modern College of Engineering"
+    },
+    {
+      "degree": "Higher Secondary School",
+      "institution": "St. Mira's College for Girls"
+    }
+  ]
+}
