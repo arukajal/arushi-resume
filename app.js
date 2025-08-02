@@ -55,16 +55,31 @@ particleEffectsCheckbox.addEventListener('change', (e) => {
   }
 });
 
-// WebGL detection
+// WebGL detection with better error handling
 const hasWebGL = (() => {
   try {
     const canvas = document.createElement('canvas');
-    return !!(window.WebGLRenderingContext &&
-      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-  } catch (e) { return false; }
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) {
+      console.warn('WebGL not supported');
+      return false;
+    }
+    
+    // Test if WebGL is actually working
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    if (debugInfo) {
+      console.log('WebGL Renderer:', gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL));
+    }
+    
+    return true;
+  } catch (e) { 
+    console.error('WebGL detection failed:', e);
+    return false; 
+  }
 })();
 
 if (!hasWebGL) {
+  console.warn('WebGL not available, showing fallback content');
   document.body.classList.add('no-webgl');
   loadingScreen.style.display = 'none';
 }
@@ -133,9 +148,33 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
 }
 
 function makePhotoTexture() {
-  const tex = new THREE.TextureLoader().load('assets/avatar.jpg', undefined, undefined, (error) => {
-    console.error('Error loading avatar texture:', error);
-  });
+  const tex = new THREE.TextureLoader().load('assets/avatar.jpg', 
+    // Success callback
+    (texture) => {
+      console.log('Avatar texture loaded successfully');
+    },
+    // Progress callback
+    (progress) => {
+      console.log('Loading avatar texture:', (progress.loaded / progress.total * 100) + '%');
+    },
+    // Error callback
+    (error) => {
+      console.error('Error loading avatar texture:', error);
+      // Create a fallback texture
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#8ab4ff';
+      ctx.fillRect(0, 0, 256, 256);
+      ctx.fillStyle = '#000';
+      ctx.font = '48px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('AS', 128, 150);
+      tex.image = canvas;
+      tex.needsUpdate = true;
+    }
+  );
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
 }
@@ -696,6 +735,38 @@ function sectionContact(data) {
     
   } catch (error) {
     console.error('Error in main function:', error);
+    
+    // Show user-friendly error message
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--panel);
+      border: 1px solid var(--error);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      z-index: 1000;
+    `;
+    errorDiv.innerHTML = `
+      <h3 style="color: var(--error); margin-top: 0;">Something went wrong</h3>
+      <p>There was an error loading the interactive resume. Please refresh the page or try again later.</p>
+      <button onclick="location.reload()" style="
+        background: var(--accent);
+        color: #000;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 1rem;
+      ">Refresh Page</button>
+    `;
+    document.body.appendChild(errorDiv);
+    
+    // Fallback to static content
     document.body.classList.add('no-webgl');
     loadingScreen.style.display = 'none';
   }

@@ -314,10 +314,15 @@ body {
 .fallback {
   position: absolute; 
   inset: 48px 0 0 0; 
-  padding: 1rem; 
+  padding: 2rem; 
   overflow: auto;
   display: none;
   line-height: 1.6;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .fallback h1 {
