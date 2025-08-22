@@ -1,0 +1,15 @@
+{
+  "name": "arushi-resume-website",
+  "version": "2.0.0",
+  "description": "Interactive 3D Resume Website",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "deploy:netlify": "npm run build && echo 'Deploy to Netlify'",
+    "deploy:vercel": "npm run build && echo 'Deploy to Vercel'",
+    "clean": "rm -f build.js"
+  },
+  "keywords": ["resume", "3d", "threejs", "interactive"],
+  "author": "Arushi Singh",
+  "license": "MIT"
+}

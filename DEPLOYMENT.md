@@ -1,73 +1,81 @@
 # Deployment Guide
 
-This guide will help you deploy your interactive 3D resume to get the full experience like your local version.
+## Quick Deploy
 
-## Option 1: Vercel (Recommended)
-
-1. **Install Vercel CLI** (if you haven't):
+1. **Run the build script** (this updates cache-busting versions):
    ```bash
-   npm install -g vercel
+   npm run build
    ```
 
-2. **Deploy**:
-   ```bash
-   vercel
-   ```
+2. **Deploy to your platform**:
+   - **Netlify**: Push to your connected Git repository
+   - **Vercel**: Push to your connected Git repository
+   - **Manual**: Upload the updated files
 
-3. **Follow the prompts** and your site will be live!
+## Cache Busting
 
-## Option 2: Netlify
+The build script automatically updates version numbers in `index.html`:
+- CSS: `styles.css?v=20241201` → `styles.css?v=1701234567890`
+- JS: `app.js?v=20241201` → `app.js?v=1701234567890`
 
-1. **Go to [netlify.com](https://netlify.com)**
-2. **Drag and drop** your entire project folder
-3. **Wait for deployment** - it will be live in seconds!
+## Troubleshooting "Not Getting Latest Page"
 
-## Option 3: GitHub Pages (Current)
+### 1. Force Cache Refresh
+- **Hard refresh**: `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac)
+- **Clear browser cache**: Clear all site data for your domain
+- **Incognito mode**: Test in a private/incognito browser window
 
-1. **Push your changes** to GitHub
-2. **Go to Settings > Pages**
-3. **Select "GitHub Actions"** as source
-4. **Wait for the workflow to complete**
+### 2. Check Deployment Status
+- Verify your deployment pipeline completed successfully
+- Check deployment logs for any errors
+- Ensure the build script ran and updated version numbers
 
-## Troubleshooting
+### 3. Verify File Changes
+- Check that `index.html` has new version numbers
+- Confirm `app.js` and `styles.css` are updated
+- Look for the build timestamp in the HTML file
 
-If the deployed version doesn't show the full interactive experience:
+### 4. Platform-Specific Issues
 
-### Check Browser Console
-1. **Open Developer Tools** (F12)
-2. **Go to Console tab**
-3. **Look for errors** - they'll help identify the issue
+#### Netlify
+- Check `netlify.toml` configuration
+- Verify build command: `npm run build`
+- Check deploy logs in Netlify dashboard
 
-### Common Issues & Solutions
+#### Vercel
+- Check `vercel.json` configuration
+- Verify build settings in Vercel dashboard
+- Check deploy logs
 
-**Issue**: "Failed to load module"
-- **Solution**: Check that your hosting provider supports ES6 modules
-- **Try**: Vercel or Netlify instead of basic static hosting
+### 5. Manual Cache Busting
+If automatic cache busting fails:
+```bash
+# Manually update version numbers
+sed -i 's/styles\.css?v=[^"]*/styles.css?v='$(date +%s)'/g' index.html
+sed -i 's/app\.js?v=[^"]*/app.js?v='$(date +%s)'/g' index.html
+```
 
-**Issue**: "WebGL not supported"
-- **Solution**: This is normal for some browsers/devices
-- **Fallback**: The static version will show automatically
+## File Structure
+```
+├── index.html          # Main HTML file (auto-updated)
+├── app.js             # Main JavaScript (Three.js app)
+├── styles.css         # CSS styles
+├── build.js           # Build script for cache busting
+├── netlify.toml      # Netlify configuration
+├── _headers           # HTTP headers for caching
+└── package.json       # NPM scripts
+```
 
-**Issue**: Missing controls or panels
-- **Solution**: Check if JavaScript is enabled
-- **Try**: Different browser or device
+## Common Issues
 
-### Test Your Deployment
+1. **Old version showing**: Run `npm run build` before deploying
+2. **CSS not updating**: Check cache headers and version numbers
+3. **JS not updating**: Verify module loading and version numbers
+4. **Deployment fails**: Check build script and platform configuration
 
-Visit your deployed site and check:
-- ✅ All 6 navigation buttons visible
-- ✅ Left control panel with sliders/checkboxes
-- ✅ Right content panel showing skills/experience
-- ✅ 3D cube rotating and interactive
-- ✅ Particle effects visible
-
-If any of these are missing, the deployment needs fixing.
-
-## Best Practices
-
-1. **Use modern hosting** (Vercel, Netlify, GitHub Pages)
-2. **Test in multiple browsers**
-3. **Check mobile compatibility**
-4. **Monitor console for errors**
-
-Your local version shows the full experience - the goal is to get the same on the deployed version! 
+## Support
+If issues persist:
+1. Check browser developer tools (F12) for errors
+2. Verify network requests show new version numbers
+3. Test in multiple browsers/devices
+4. Check platform-specific deployment logs 
