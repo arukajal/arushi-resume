@@ -8,12 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  
-  <!-- Preload critical assets -->
-  <link rel="preload" href="three.module.js" as="script" type="module">
-  <link rel="preload" href="OrbitControls.js" as="script" type="module">
-  <link rel="preload" href="data.json" as="fetch" crossorigin>
+  <link rel="icon" href="assets/avatar.jpg">
+  <link rel="stylesheet" href="styles.css?v=dev" />
 </head>
 <body>
   <header class="topbar">
@@ -38,16 +34,33 @@
     <!-- Interactive Controls -->
     <div class="controls">
       <div class="control-group">
-        <label>Rotation Speed</label>
-        <input type="range" id="rotationSpeed" min="0" max="2" step="0.1" value="0.5" label="">
+        <label for="rotationSpeed">Rotation Speed</label>
+        <input
+          type="range"
+          id="rotationSpeed"
+          min="0"
+          max="2"
+          step="0.1"
+          value="0.5"
+          title="Adjust rotation speed"
+        >
       </div>
       <div class="control-group">
-        <label>Auto Rotate</label>
-        <input type="checkbox" id="autoRotate">
+        <label for="autoRotate">Auto Rotate</label>
+        <input
+          type="checkbox"
+          id="autoRotate"
+          title="Toggle auto rotation"
+        >
       </div>
       <div class="control-group">
-        <label>Particle Effects</label>
-        <input type="checkbox" id="particleEffects" checked>
+        <label for="particleEffects">Particle Effects</label>
+        <input
+          type="checkbox"
+          id="particleEffects"
+          checked
+          title="Toggle particle effects"
+        >
       </div>
     </div>
 
@@ -66,14 +79,56 @@
     <p>Pune, India • <a href="mailto:arukajal2399@gmail.com">arukajal2399@gmail.com</a> • <a href="tel:9403316920">9403316920</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/arushi-s-1bba89179">/arushi-s-1bba89179</a> • GitHub: <a href="https://github.com/arukajal">@arukajal</a></p>
     <h2>Profile</h2>
-    <p>Meticulous web developer with 3+ years of front-end experience and a passion for responsive website design. Implemented a new responsive and user-friendly web application for the general scrapping of oils and wells websites, making it easy for data analysts to collect and analyze the data.</p>
+    <p>Full-Stack Developer | 3D Visualization & Frontend Engineering
+      Innovative developer with hands-on experience building GitHub-like collaboration platforms for 3D models, integrating Rhino, OBJ, GLTF, and Forge Viewer for seamless visualization. Skilled in React, React Three Fiber, Material UI, and performance optimization, with a strong focus on creating reusable component libraries, measurement tools, and scalable architectures. Proven ability to deliver end-to-end modules under tight deadlines, driving measurable business impact — including a $150K revenue boost through rapid feature delivery.</p>
     <h2>Skills</h2>
     <ul><li>Web Design</li><li>UI/UX Design Thinking</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>React</li><li>Redux</li><li>Three.js</li><li>AWS (Lambda, Cognito, EC2, ECS, MQTT, DynamoDB)</li><li>Material UI</li><li>Bootstrap</li><li>Flask (RESTful APIs)</li><li>Autodesk Forge Viewer / Autodesk Platform Services</li><li>Problem-Solving</li><li>Project Management Tools</li><li>Strong Communication</li></ul>
     <h2>Experience</h2>
     <ul>
-      <li><strong>Software Engineer</strong> — Stealth Startup (2024–Present): Built a BIM visualization application using Forge Viewer with user-driven interaction and controls. Implemented Redux for seamless, centralized state management across the app.</li>
-      <li><strong>Team Lead</strong> — CCTech (2023–2024): Created a dashboard with 10+ applications; handled customer meetings and presented frontend updates. Optimized application speed by 50%.</li>
-      <li><strong>Member of Technical Staff</strong> — CCTech (2021–2023): Implemented web apps and landing pages end-to-end with ReactJS, Python, and AWS. Reduced bugs by 40% by eliminating prop drilling.</li>
+        <li><strong>Software Engineer</strong> — Stealth Startup (2024–Present): 
+        <br>Keys and Responsibilities:
+        <br>Developed a GitHub-like 3D collaboration platform enabling version
+      control, visualization, and interaction with 3D models, improving design
+review workflows.
+        <br>Built a reusable component library using Material UI, with standardized
+        height/width and styles, ensuring design consistency and faster feature
+        delivery across the product.
+        <br>Optimized rendering performance in React Three Fiber, reducing load times
+        and improving user experience for complex 3D models.
+        Implemented measurement tools inside the 3D environment, allowing users
+        to take accurate real-time dimensions directly on models.
+        <br>Integrated multi-format 3D visualization pipelines, enabling seamless
+        rendering of Rhino (.3dm), OBJ, and GLTF models for broad interoperability.
+        Worked with Autodesk Forge Viewer to extend model viewing capabilities,
+        including loading, manipulation, and cross-platform visualization of BIM and
+        CAD data.
+        <br>Contributed to scalable frontend architecture, ensuring modularity,
+        reusability, and maintainability in a fast-paced startup environment.
+        <br>Key Achievements
+        <br>Delivered a full 3D collaboration module in under 15 days, accelerating go
+        to-market and directly contributing to $150K in company revenue.
+        <br>Spearheaded end-to-end development of a critical product feature within
+        two weeks, enabling the startup to secure $150K in profit through rapid
+        client adoption.</li>
+        <li><strong>Team Lead</strong> — CCTech (2023–2024): 
+        <br>Keys and Responsibilities:
+        <br>Created a dashboard with over ten applications.
+        <br>Worked on the project Flair 3D from Get Tech, focusing on visualizing 3D sensors in the frontend.
+        <br>Handled customer meetings and even hosted one on behalf of the project's front end.
+        <br>Developed core logic and problem-solving solutions for the implementation of new features.
+        <br>Assisted in building 100% reusable code and libraries for further use.
+        <br>Key Achievements:
+        <br>Optimized the application speed by 50%.
+         <li><strong>Member of Technical Staff</strong> — CCTech (2021–2023): 
+        <br>Keys and Responsibilities:
+        <br>Implemented web applications and landing pages from concept through deployment with ReactJS, Python and
+        <br>AWS cloud services.
+        <br>Standardized all output with a new, responsive, user-friendly approach and strategy.
+        <br>Assessed UX and UI designs for technical feasibility.
+        <br>Collaborated with the design team members to incorporate visual design into functional web pages. 
+        <br>Validated 100% user input before submitting it to the backend
+        <br>Key Achievements
+        <br>Eradicated prop drilling leading to 40% less bugs
     </ul>
     <h2>Projects</h2>
     <ul>
@@ -83,26 +138,6 @@
     </ul>
   </section>
 
-  <!-- Debug script to help identify deployment issues -->
-  <script>
-    // Log loading status for debugging
-    console.log('Resume website loading...');
-    
-    // Check if modules are supported
-    if (typeof import === 'undefined') {
-      console.error('ES6 modules not supported');
-      document.body.classList.add('no-webgl');
-    }
-    
-    // Monitor script loading
-    window.addEventListener('error', function(e) {
-      console.error('Script loading error:', e.error);
-      if (e.filename && e.filename.includes('.js')) {
-        console.error('Failed to load:', e.filename);
-      }
-    });
-  </script>
-
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=dev"></script>
 </body>
 </html>

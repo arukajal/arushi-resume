@@ -8,24 +8,31 @@
     "LinkedIn": "https://www.linkedin.com/in/arushi-s-1bba89179",
     "GitHub": "https://github.com/arukajal"
   },
-  "profile": "Meticulous web developer with 3+ years of front-end experience and a passion for responsive website design. Implemented a new responsive and user-friendly web application for the general scrapping of oils and wells websites, making it easy for data analysts to collect and analyze the data.",
+  "profile": "Full-Stack Developer | 3D Visualization & Frontend Engineering Innovative developer with hands-on experience building GitHub-like collaboration platforms for 3D models, integrating Rhino, OBJ, GLTF, and Forge Viewer for seamless visualization. Skilled in React, React Three Fiber, Material UI, and performance optimization, with a strong focus on creating reusable component libraries, measurement tools, and scalable architectures. Proven ability to deliver end-to-end modules under tight deadlines, driving measurable business impact — including a $150K revenue boost through rapid feature delivery.",
   "skills": [
-    "Web Design",
-    "UI/UX Design Thinking",
-    "JavaScript",
+    "Javascript",
     "HTML",
     "CSS",
-    "React",
+    "React JS/TS/Native",
     "Redux",
-    "Three.js",
-    "AWS (Lambda, Cognito, EC2, ECS, MQTT, DynamoDB)",
+    "ThreeJS",
+    "React Three FIber",
+    "AWS Services",
     "Material UI",
     "Bootstrap",
-    "Flask (RESTful APIs)",
-    "Autodesk Forge Viewer / Autodesk Platform Services",
-    "Problem-Solving",
-    "Project Management Tools",
-    "Strong Communication"
+    "Flask (RESTFUL APIs)",
+    "AWS DynamoDB",
+    "AWS Cognito",
+    "AWS S3 services",
+    "AWS EC2",
+    "AutoDesk Forge Viewer",
+    "Web Design",
+    "Tanstack",
+    "Zustand",
+    "GraphQL",
+    "TypeScript",
+    "AutoDesk Platform Services"
+    
   ],
   "experience": [
     {
@@ -33,11 +40,17 @@
       "company": "Stealth Startup",
       "dates": "2024 – Present",
       "bullets": [
-        "Built a BIM visualization application using Forge Viewer with user-driven interaction and controls.",
-        "Implemented Redux for seamless, centralized state management across the app.",
-        "Integrated OBJ assets into Forge Viewer to improve load performance and capabilities."
+        "Developed a GitHub-like 3D collaboration platform enabling version control, visualization, and interaction with 3D models, improving design review workflows.",
+        "Built a reusable component library using Material UI, with standardized height/width and styles, ensuring design consistency and faster feature delivery across the product.",
+        "Optimized rendering performance in React Three Fiber, reducing load times and improving user experience for complex 3D models.",
+        "Implemented measurement tools inside the 3D environment, allowing users to take accurate real-time dimensions directly on models.",
+        "Integrated multi-format 3D visualization pipelines, enabling seamless rendering of Rhino (.3dm), OBJ, and GLTF models for broad interoperability.",
+        "Worked with Autodesk Forge Viewer to extend model viewing capabilities, including loading, manipulation, and cross-platform visualization of BIM and CAD data.",
+        "Contributed to scalable frontend architecture, ensuring modularity, reusability, and maintainability in a fast-paced startup environment."
+
       ],
-      "achievements": ["Optimized application speed"]
+      "achievements": ["Delivered a full 3D collaboration module in under 15 days, accelerating go-market and directly contributing to $150K in company revenue.",
+        "Spearheaded end-to-end development of a critical product feature within two weeks, enabling the startup to secure $150K in profit through rapid client adoption"]
     },
     {
       "title": "Team Lead",
